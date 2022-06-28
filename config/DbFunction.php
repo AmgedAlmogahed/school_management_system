@@ -243,7 +243,7 @@ function edit_course($cshort,$cfull,$udate,$id){
     $db = Database::getInstance();
 	$mysqli = $db->getConnection();
 	//echo $cshort.$cfull.$udate.$id;exit;
-	$query = "update tbl_course set cshort=?,cfull=? ,update_date=? where cid=?";
+	$query = "update tbl_course set cshort=?,cfull=? ,cdate=? where cid=?";
 	$stmt= $mysqli->prepare($query);
 	$stmt->bind_param('sssi',$cshort,$cfull,$udate,$id);
 	$stmt->execute();
